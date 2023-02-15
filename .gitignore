@@ -1,0 +1,11 @@
+service-alerter
+
+service-alerter.yaml
+
+*.tar.gz
+
+.DS_Store
+
+*.env*
+
+!.env.sample
