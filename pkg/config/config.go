@@ -26,7 +26,7 @@ type Config struct {
 func NewConfigFromEnvVars() (*Config, error) {
 	configFilePath, err := getConfigFilePath()
 	if err != nil {
-		return nil, fmt.Errorf("error occurred while getting nginx port: %v", err)
+		return nil, fmt.Errorf("error occurred while getting config file path: %v", err)
 	}
 
 	environmentName := getEnvironmentName()
@@ -49,7 +49,7 @@ func NewConfigFromEnvVars() (*Config, error) {
 	}, nil
 }
 
-// Get nginx port number. Default is "80"
+// Get config file path
 func getConfigFilePath() (string, error) {
 	configFilePath, ok := os.LookupEnv(CONFIG_FILE_PATH_ENV_VAR)
 	if !ok {
